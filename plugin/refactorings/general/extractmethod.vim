@@ -1,7 +1,7 @@
 " Synopsis:
 "   Extracts the selected scope into a method above the scope of the
 "   current method
-function! ExtractMethod() range
+function! GExtractMethod() range
   try
     let name = common#get_input("Method name: ", "No method name given!")
   catch
@@ -9,7 +9,7 @@ function! ExtractMethod() range
     return
   endtry
   
-  let [block_start, block_end] = common#get_range_for_block('\<def\|it\>','Wb')
+  let [block_start, block_end] = common#get_range_for_block('\<{\>','Wb')
 
   let pre_selection = join( getline(block_start+1,a:firstline-1), "\n" )
   let pre_selection_variables = s:ruby_determine_variables(pre_selection)
@@ -241,7 +241,7 @@ function! s:em_insert_new_method(name, selection, parameters, retvals, block_end
   " Build new method text, split into a list for easy insertion
   let method_params = ""
   if len(a:parameters) > 0 
-    let method_params = "(" . join(a:parameters, ", ") . ")"
+    let method_params = "(" . join("void *", a:parameters, ", ") . ")"
   endif
 
   let method_retvals = ""
@@ -249,7 +249,7 @@ function! s:em_insert_new_method(name, selection, parameters, retvals, block_end
     let method_retvals = join(a:retvals,", ")
   endif
 
-  let method_lines = split( "\ndef " . a:name . method_params . "\n" . a:selection . (has_trailing_newline ? "" : "\n") . (len(a:retvals) > 0 ? "return " . method_retvals . "\n" : "") . "end", "\n", 1)
+  let method_lines = split( "\nvoid *" . a:name . method_params . " {\n" . a:selection . (has_trailing_newline ? "" : "\n") . (len(a:retvals) > 0 ? "return " . method_retvals . "\n" : "") . "}", "\n", 1)
 
   let start_line_number = a:block_end - len(split(a:selection, "\n", 1)) + 1 
 
@@ -258,7 +258,7 @@ function! s:em_insert_new_method(name, selection, parameters, retvals, block_end
 
   " Insert call to new method, and fix up the source so it makes sense
   if has_trailing_newline
-    exec "normal i" . (len(a:retvals) > 0 ? method_retvals . " = " : "") . a:name . method_params . "\n"
+    exec "normal i" . (len(a:retvals) > 0 ? method_retvals . " = " : "") . a:name . method_params . ";\n"
     normal k
   else
     exec "normal i" . a:name 
