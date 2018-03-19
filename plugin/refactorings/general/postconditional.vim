@@ -1,7 +1,7 @@
 " Synopsis: 
 "   converts a post-conditional expression to a conditional expression
 "   note: will convert both types of conditional expression
-function! ConvertPostConditional()
+function! GConvertPostConditional()
   " pattern to match
   let conditional_operators = '\<if\|unless\|while\|until\>'
   " save the current line

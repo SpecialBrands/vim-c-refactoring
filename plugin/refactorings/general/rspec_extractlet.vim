@@ -1,7 +1,7 @@
 " Synopsis:
 "   Extracts into an Rspec let declaration
 "   Special thanks to ReinH (#vim room at irc.freenode.net)
-function! ExtractIntoRspecLet()
+function! GExtractIntoRspecLet()
   normal 0
   if empty(matchstr(getline("."), "=")) == 1
     echo "Can't find an assignment"

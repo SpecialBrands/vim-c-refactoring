@@ -1,7 +1,7 @@
 " Synopsis:
 "   Extracts the selected scope into a constant at the top of the current
 "   module or class
-function! ExtractConstant()
+function! GExtractConstant()
   try
     let name = toupper(common#get_input("Constant name: ", "No constant name given!"))
   catch

@@ -1,6 +1,6 @@
 " Synopsis:
 "   Rename the selected local variable 
-function! RenameLocalVariable()
+function! GRenameLocalVariable()
   try
     let selection = common#get_visual_selection()
 

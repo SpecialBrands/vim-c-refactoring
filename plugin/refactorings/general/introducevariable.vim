@@ -1,6 +1,6 @@
 "Synopsis:
 "  Introduce variable from class or method name
-function! IntroduceVariable()
+function! GIntroduceVariable()
   let original_a = @a
 
   normal ^

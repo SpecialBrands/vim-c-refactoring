@@ -1,7 +1,7 @@
 
 " Synopsis:
 "   Adds a parameter (or many separated with commas) to a method
-function! AddParameter()
+function! GAddParameter()
   try
     let name = common#get_input("Parameter name: ", "No parameter name given!")
   catch

@@ -1,6 +1,6 @@
 " Synopsis:
 "   Extracts the selected scope to a variable
-function! ExtractLocalVariable()
+function! GExtractLocalVariable()
   try
     let name = common#get_input("Variable name: ", "No variable name given!")
   catch

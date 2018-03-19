@@ -1,6 +1,6 @@
 " Synopsis:
 "   Inlines a variable
-function! InlineTemp()
+function! GInlineTemp()
   " Copy the variable under the cursor into the 'a' register
   " XXX: How do I copy into a variable so I don't pollute the registers?
   let original_a = @a

@@ -2,7 +2,7 @@
 " Synopsis:
 "   Adds a parameter (or many separated with commas) to a method with no
 "   brackets
-function! AddParameterNB()
+function! GAddParameterNB()
   try
     let name = common#get_input("Parameter name: ", "No parameter name given!")
   catch

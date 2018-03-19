@@ -1,7 +1,7 @@
 
 " Synopsis:
 "   Rename the selected instance variable
-function! RenameInstanceVariable()
+function! GRenameInstanceVariable()
   try
     let selection = common#get_visual_selection()
 
