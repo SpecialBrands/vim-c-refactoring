@@ -1,20 +1,8 @@
-# Ruby Refactoring Tool for Vim
+# C Refactoring Tool for Vim
 
 I love vim! It's my editor of choice when I am developing software.
 
-Currently (for the last 4 years at least) I have been working mainly
-with the Ruby Programming Language.
-
-I have been missing a refactoring tool for a while (like the ones you
-can find in IDE's) while I am developing, but I never had the nerve
-to dwell into vim script to actually code my own.
-
-Recently (a couple of weeks ago) Gary Bernhardt presented his vim
-configuration in the Software Craftsmanship User Group UK and he
-showed us the two refactoring patterns he has written in vim script.
-
-Initially I just thought "cool", but it didn't really sink in until
-a couple of weeks later.
+I took [https://github.com/ecomba/vim-ruby-refactoring](vim-ruby-refactoring) and am hacking away at in
 
 So now I have decided to code this in vim script, but I am not sure how far
 I will go with it (clone at your own risk).
@@ -25,33 +13,33 @@ I will go with it (clone at your own risk).
    
 ## Implemented commands/patterns:
    
-    :RAddParameter           - Add Parameter 
-    :RInlineTemp             - Inline Temp
-    :RConvertPostConditional - Convert Post Conditional
-    :RExtractConstant        - Extract Constant          (visual selection)
-    :RExtractLet             - Extract to Let (Rspec)
-    :RExtractLocalVariable   - Extract Local Variable    (visual selection)
-    :RRenameLocalVariable    - Rename Local Variable     (visual selection/variable under the cursor, *REQUIRES matchit.vim*)
-    :RRenameInstanceVariable - Rename Instance Variable  (visual selection, *REQUIRES matchit.vim*)
-    :RExtractMethod          - Extract Method            (visual selection, *REQUIRES matchit.vim*)
+    ~~:GAddParameter           - Add Parameter ~~
+    ~~:GInlineTemp             - Inline Temp~~
+    ~~:GConvertPostConditional - Convert Post Conditional~~
+    ~~:GExtractConstant        - Extract Constant          (visual selection)~~
+    ~~:GExtractLet             - Extract to Let (Rspec)~~
+    ~~:GExtractLocalVariable   - Extract Local Variable    (visual selection)~~
+    ~~:GRenameLocalVariable    - Rename Local Variable     (visual selection/variable under the cursor, *REQUIRES matchit.vim*)~~
+    ~~:GRenameInstanceVariable - Rename Instance Variable  (visual selection, *REQUIRES matchit.vim*)~~
+    :GExtractMethod          - Extract Method            (visual selection, *REQUIRES matchit.vim*)
 
 ## Default bindings:
 
-    :nnoremap <leader>rap  :RAddParameter<cr>
-    :nnoremap <leader>rcpc :RConvertPostConditional<cr>
-    :nnoremap <leader>rel  :RExtractLet<cr>
-    :vnoremap <leader>rec  :RExtractConstant<cr>
-    :vnoremap <leader>relv :RExtractLocalVariable<cr>
-    :nnoremap <leader>rit  :RInlineTemp<cr>
-    :vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-    :vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-    :vnoremap <leader>rem  :RExtractMethod<cr>
+    ~~:nnoremap <leader>gap  :GAddParameter<cr>~~
+    ~~:nnoremap <leader>gcpc :GConvertPostConditional<cr>~~
+    ~~:nnoremap <leader>gel  :GExtractLet<cr>~~
+    ~~:vnoremap <leader>gec  :GExtractConstant<cr>~~
+    ~~:vnoremap <leader>gelv :GExtractLocalVariable<cr>~~
+    ~~:nnoremap <leader>git  :GInlineTemp<cr>~~
+    ~~:vnoremap <leader>grlv :GRenameLocalVariable<cr>~~
+    ~~:vnoremap <leader>griv :GRenameInstanceVariable<cr>~~
+    :vnoremap <leader>gem  :GExtractMethod<cr>
 
 Additional usage examples (thanks Justin!):
-[http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-series/](http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-series/)
+~~[http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-series/](http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-series/)~~
 
 ## Documentation
-[http://relishapp.com/despo/vim-ruby-refactoring](http://relishapp.com/despo/vim-ruby-refactoring)
+~~[http://relishapp.com/despo/vim-ruby-refactoring](http://relishapp.com/despo/vim-ruby-refactoring)~~
 
 Enrique Comba Riepenhausen & Paul King
 
